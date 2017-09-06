@@ -1,10 +1,13 @@
+//IMPORTS
+@import 'page-about';
+
 //VARIABLES
 $Color_Letras : #535252;
 
-$Opacidad: 0.5;
+$Opacidad: 0.6;
 
 $Background_Gradient: linear-gradient(45deg, rgba(255, 238, 88, $Opacidad), rgba(255, 112, 0, $Opacidad) 50%);
-
+$Background_Button: linear-gradient(45deg, rgba(50,154,254, 1), rgba(10, 1, 223, 1));
 body {
 	box-sizing: border-box;
 	background: #efefef;
@@ -26,25 +29,35 @@ body {
 		color: #fff;
 	}
 }
-
+.active {
+	background-image: $Background_Gradient;
+	color: #fff;
+}
 .Principal__Nav {
-	padding: 0 20px;
+	padding: 0;
 	margin: 0;
 	
 	.Principal__Menu__Toggle {
 		color: $Color_Letras;
 	}
 	.Principal__Nav__Item {
-		color: $Color_Letras;    
+		color: $Color_Letras;
+		padding: 0 30px;
+		text-align: center;
+		&:hover {
+			background-image: $Background_Gradient;
+			color: #fff;
+		} 
 	} 
 	.Principal__Nav__Logo {
 		color: $Color_Letras;
 		letter-spacing: .3em;
 		font-weight: bold;
 		font-size: 2.5em;
+		padding-left: 20px;
 	}
 	
-	}
+	
 }
 
 
@@ -64,6 +77,7 @@ body {
 		bottom: 0;
 		left: 0;
 		transform: skewY(5deg) translateY(68px);
+		
 	}
 	::after {
 		content: '';
@@ -95,29 +109,33 @@ body {
 		color: $Color_Letras;
 		text-align: center;
 	}
+	
 	.Principal__Section__Arrow {
 		margin: 30px 0;
 		font-size: 2.5em;
 		color: $Color_Letras;
-		
 	}
 }    
 
 .Second__Section__About__Container {
 	display: flex;
-	z-index: 1000;
+	
 	align-items: center;
 	flex-direction: column;
 	position: relative;
+	
 	.Second__Section__Photo__Container {
 		width: 200px;
 		height: 200px;
 		border-radius: 50%;
 		margin-top: 40px;
-		background: radial-gradient(red, yellow);
+		
 		.Second__Section__Photo {
 			width: 100%;
 			height: 100%;	
+			object-fit: cover;
+			border-radius: 50%;
+			
 		}	
 	}
 	.Second__Section__Text {
@@ -126,6 +144,154 @@ body {
 		color: $Color_Letras;
 		text-align: justify;
 	}
+}
+
+.Third__Section__Separation__Container {
+	width: 100%;
+	height: 300px;
+	background: url('../img/fondo_sep.jpg');
+	background-position: center;
+	background-size: cover;
+	margin-top: 40px;
+	box-shadow: rgba(0,0,0,.7) 1px 1px 8px;
+
+	.Third__Section__DarkBack {
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.6);
+		.Third__Section__Separation {
+			width: 100%;
+			height: 100%;
+			background: $Background_Gradient;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			.Third__Section__Separation__Title {
+				color: #fff;
+				text-align: center;
+			}
+			.Third__Section__Separation__Button {
+				background-image: $Background_Button;
+				margin-bottom: 40px;
+				.Icon__Smile {
+					animation: smile infinite 2s ease;
+					@keyframes smile {
+						0% {
+							transform: rotate(0deg);
+						}
+						100% {
+							transform: rotate(360deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.Fourth__Section__LatestWorks__Container {
+	
+	background: #efefef;
+	position: relative;
+	box-sizing: border-box;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	.Fourth__Section__LatestWorks__Title__Container {
+		
+		.Fourth__Section__LatestWorks__Title{
+			text-align: center;
+			color: $Color_Letras;
+		}
+	
+	}
+	.Fourth__Section__LatestWorks__Thumbs__Container {
+		padding: 0;
+		position: relative;
+		overflow: hidden;
+		.Fourth__Section__LatestWorks__Thumbs {
+			height: 250px;
+			padding: 0;
+			position: relative;
+			transition: .2s all ease-out;
+			&:hover {
+				.Works__Captions {
+					transform: translateY(-0.2%);
+				}
+			}
+			.Fourth__Section__LatestWorks__Thumbs__Image {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				cursor: pointer;
+				
+			}
+			.Works__Captions {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				background-image: $Background_Gradient;
+				width: 100%;
+				height: 100%;
+				transition: 0.2s all ease-out;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: translateY(100%);
+				.Works__Captions__Title {
+					font-size: 1.6em;
+					color: #fff;
+				}
+				.Works__Captions__Button {
+					background-image: $Background_Button;
+				}
+				
+			}
+		}
+	}
+	
+}
+.Footer__Container {
+	width: 100%;
+	height: 100px;
+	background-image: url('../img/fondo.jpg');
+	.Footer__Content {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		background-image: $Background_Gradient;
+		margin: 0;
+		small {
+			color: $Color_Letras;
+			font-style: italic;
+		}
+		.Footer__Button {
+			background: $Background_Button;
+			margin-top: 20px;
+		}
+	}
+}
+.side-nav {
+	background: url('../img/fondo.jpg');
+	background-position: center;
+	background-size: cover;
+	z-index: 10000;
+	.drag-target {
+		z-index: 9999;
+	}
+	.Side__Nav__List {
+		padding: 20px 0;
+		&:first-child {
+			margin-top: 45px;
+		}
+		
+	}
+
 }
 /*MEDIAQUERIES*//*MEDIAQUERIES*//*MEDIAQUERIES*//*MEDIAQUERIES*/
 /*MEDIAQUERIES*//*MEDIAQUERIES*//*MEDIAQUERIES*//*MEDIAQUERIES*/
@@ -154,6 +320,17 @@ body {
 		}
 	}
 }
+
+@media screen and (max-width: 922px) {
+	
+	.Fourth__Section__LatestWorks__Thumbs{ 
+		height: 250px;
+		
+	}
+	.Second__Section__Text {
+		padding: 0 80px;
+	}
+}
 @media screen and (max-width: 600px) {
 	.Top__Header {
 		padding: 10px;
@@ -161,10 +338,23 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
+		.Second__Section__Text {
+			padding: 0 60px;
+		}
 		.Social__Item {
 			padding: 0 10px;
 		}
+	}
+	.Second__Section__About__Container {
+		padding: 0;
+		.Second__Section__Text {
+			padding: 0;
+		}
+	}
+	
+	.Fourth__Section__LatestWorks__Thumbs{ 
+		height: 240px;
+		
 	}
 }
 @media screen and (max-width: 400px) {
@@ -174,12 +364,10 @@ body {
 			padding: 30px 20px;
 			font-size: 3em;
 			border-top: 5px dotted $Color_Letras;
-			border-bottom: 5px dotted $Color_Letras;
-		
-			
+			border-bottom: 5px dotted $Color_Letras;	
 		}
-	
 	}
+	
 }
 @media screen and (max-width: 250px) {
 	.Principal__Nav {
@@ -198,8 +386,12 @@ body {
 		.Principal__Nav__Logo small {
 			display:none;
 		}
+		
 	}
-
+	
+	.Third__Section__Separation__Title {
+		font-size: 1.5em;
+	}
 	.Principal__Section__Container {
 		
 		.Principal__Section__Title {
@@ -209,5 +401,9 @@ body {
 		.Principal__Section__Subtitle {
 			font-size: 1.5em;
 		}
+	}
+
+	.Fourth__Section__LatestWorks__Thumbs{ 
+		height: 150px;
 	}
 }

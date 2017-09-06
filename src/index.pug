@@ -23,52 +23,113 @@ html(lang="en")
 							span(class="Social__Item fa fa-twitter-square" aria-hidden="true")
 						a(href="#")
 							span(class="Social__Item fa fa-linkedin-square" aria-hidden="true")
+			//FIN TOP of the Page
 			
 			//NAVBAR PRINCIPAL
 			div(class="Principal__Nav__Container")
 				nav(class="row Principal__Nav grey lighten-4")
 					div(class="nav-wrapper Principal__Nav__UlContainer")
-						a(href="#" class="left brand-logo Principal__Nav__Logo") {FM} 
+						a(href="/" class="left brand-logo Principal__Nav__Logo") {FM} 
 							
-						<a href="#" data-activates="Principal__Menu__Toggle" class="right button-collapse Principal__Menu__Toggle"><i class="material-icons">menu</i></a>
+						a(href="#" data-activates="Principal__Menu__Toggle" class="right button-collapse Principal__Menu__Toggle")
+							i(class="material-icons") menu
 						ul(id="nav-mobile" class="right hide-on-med-and-down")
 							li
-								a(href="#" class="Principal__Nav__Item") Item 1
+								a(href="/" class="Principal__Nav__Item") Inicio
 							li
-								a(href="#" class="Principal__Nav__Item") Item 2
+								a(href="page-about.html" class="Principal__Nav__Item") Bio
+							
 							li
-								a(href="#" class="Principal__Nav__Item") Item 3
+								a(href="#" class="Principal__Nav__Item") Blog
 							li
-								a(href="#" class="Principal__Nav__Item") Item 4
+								a(href="#" class="Principal__Nav__Item") Contactos
 
 						ul(id="Principal__Menu__Toggle" class="side-nav")
-							li
-								a(href="#" class="Principal__Nav__Item") Item 1
-							li
-								a(href="#" class="Principal__Nav__Item") Item 2
-							li
-								a(href="#" class="Principal__Nav__Item") Item 3
-							li
-								a(href="#" class="Principal__Nav__Item") Item 4
-			
+							li(class="Side__Nav__List")
+								a(href="/" class="Principal__Nav__Item") Inicio
+							div(class="divider")
+							li(class="Side__Nav__List")
+								a(href="page-about.html" class="Principal__Nav__Item") Bio
+							div(class="divider")
+							
+							li(class="Side__Nav__List")
+								a(href="#" class="Principal__Nav__Item") Blog
+							div(class="divider")
+							li(class="Side__Nav__List")
+								a(href="#" class="Principal__Nav__Item") Contactos
+							div(class="divider")
+			//FIN NAVBAR PRINCIPAL
+		//FIN DEL HEADER
+		main
 			//IMAGEN PRINCIPAL AL ENTRAR
 			section
 				div(class="Principal__Section__Container")
 					div(class="Principal__Section")
 						h1(class="Principal__Section__Title") FRANCISCO MEDINA
 						h4(class="Principal__Section__Subtitle") Web Developer
-						i(class="material-icons Principal__Section__Arrow") expand_more
+						a(href="#")
+							i(class="material-icons Principal__Section__Arrow") expand_more
+			
+			//FIN IMAGEN PRINCIPAL AL ENTRAR
 			
 			//SECCION DEL ABOUT
-			section
+			section(class="Second__Section")
 				div(class="container Second__Section__About__Container")
 					div(class="Second__Section__Photo__Container")
-						img(class="Second__Section__Photo" src="", alt="Photo")
+						img(class="Second__Section__Photo" src="img/foto.png", alt="Photo")
 					p(class="Second__Section__Text") Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus illum expedita hic minima earum laudantium, voluptatibus pariatur perferendis amet animi odio dolorum veritatis totam blanditiis explicabo labore placeat distinctio reiciendis. Voluptas debitis temporibus, illum magnam tempore nulla dignissimos saepe nihil commodi ea rem fugiat? Expedita tempora voluptates ex maiores repellendus?
+						a(href="page-about.html")  Ver más...
+			//FIN SECCION DEL ABOUT
+			
+			//SECTION DE SEPARACIÓN
+			section
+				div(class="Third__Section__Separation__Container")
+					div(class="Third__Section__DarkBack")
+						div(class="Third__Section__Separation")
+							h2(class="Third__Section__Separation__Title") ¿Quieres contactarme?
+							a(href="#" class="waves-effect waves-light btn Third__Section__Separation__Button pulse") Hazlo...
+								i(class="fa fa-smile-o right Icon__Smile")
+			//FIN SECTION DE SEPARACIÓN
+			
+			//SECTION TRABAJOS RECIENTES
+			section
+				div(class="Fourth__Section__LatestWorks__Container")
+					div(class="")
+						div(class="Fourth__Section__LatestWorks__Title__Container")
+							h3(class="Fourth__Section__LatestWorks__Title") Últimos trabajos
+							div(class="container row Fourth__Section__LatestWorks__Thumbs__Container")
+								article(class="col s12 l4 Fourth__Section__LatestWorks__Thumbs")
+									img(class="Fourth__Section__LatestWorks__Thumbs__Image" src="img/1.jpg", alt="")
+									div(class="Works__Captions")
+										h3(class="Works__Captions__Title") Title...
+										a(href="#" class="btn Works__Captions__Button") Ver más...
+								article(class="col s12 l4 Fourth__Section__LatestWorks__Thumbs")
+									img(class="Fourth__Section__LatestWorks__Thumbs__Image" src="img/1.jpg", alt="")
+									div(class="Works__Captions")
+										h3(class="Works__Captions__Title") Title...
+										a(href="#" class="btn Works__Captions__Button") Ver más...
+								article(class="col s12 l4 Fourth__Section__LatestWorks__Thumbs")
+									img(class="Fourth__Section__LatestWorks__Thumbs__Image" src="img/1.jpg", alt="")
+									div(class="Works__Captions")
+										h3(class="Works__Captions__Title") Title...
+										a(href="#" class="btn Works__Captions__Button") Ver más...
+								
+									
+			//FIN SECTION TRABAJOS RECIENTES
 
-
-
+			//FOOTER
+		footer
+			div(class="Footer__Container")
+				div(class="Footer__Content")
+					a(href="#" class="waves-effect waves-light btn Footer__Button") Visita mi Blog
+					small Se reservan todos los derechos de este sitio a Francisco Medina | 2017
+			//FIN FOOTER
+		
+		//FIN DEL MAIN
+		
 		script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
 		script(src="js/materialize.min.js")
 		script(src="https://use.fontawesome.com/699d33b879.js")
 		script(src="js/mainQuery.js")
+
+		//FIN BODY

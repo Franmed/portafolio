@@ -12,7 +12,7 @@ const reload = browserSync.reload;
 const source = {
     server: '../dist',
     estructure: './*.pug',
-    styles: './*.scss',
+    styles: './index.scss',
     scripts: 'js/*.js',
     images: 'img/*'
 };
